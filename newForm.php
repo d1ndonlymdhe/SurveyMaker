@@ -29,6 +29,7 @@ $createNewTableWithFieldsAndLabelNames = "CREATE TABLE $newTableName(
 	fields VARCHAR(100) NOT NULL,
 	labels VARCHAR(100) NOT NULL)";
 $columns = "";
+var_dump($createNewTableWithFieldsAndLabelNames);
 $conn -> query($createNewTableWithFieldsAndLabelNames);
 for($i=0;$i<count($fields);$i++){
 	$field = underCase($fields[$i]);

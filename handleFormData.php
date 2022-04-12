@@ -23,5 +23,5 @@
 	$insertDataQuery = "INSERT INTO $formDataTableName($fields) VALUES ($values)";
 	var_dump($insertDataQuery);
 	$conn -> query($insertDataQuery);
-	header("Location: ./index.php")
+header("Location: ./renderForm.php?id=$formId")
 ?>
