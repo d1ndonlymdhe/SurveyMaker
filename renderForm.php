@@ -16,73 +16,46 @@ $allFieldsAndLabels = $conn->query($getAllFieldsQuery);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         <?php
-		echo $formName;
-		?>
+        echo $formName;
+        ?>
     </title>
     <link href="global.css" rel="stylesheet">
-    <style>
-    #content {
-        height: 95%;
-        width: 99%;
-        display: grid;
-        grid-template-rows: 10% 90%;
-        background-color: green;
-        margin: 5px;
-        border-radius: 0.5rem;
-    }
+    <link href="renderForm.css" rel="stylesheet">
 
-    #content>div {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        margin: 5px;
-    }
-
-    #mainForm {
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        margin: 5px;
-        row-gap: 1rem;
-    }
-    </style>
 </head>
 
 <body>
     <div id="root">
         <div id="heading">
             <?php
-			echo $formName;
-			?>
+            echo $formName;
+            ?>
         </div>
         <div id="content">
             <div>
                 <?php
-				echo "<a href = \"showResults.php?formId=$formId&formName=$formName\"> <button class='primaryBtn'>Show Results</button> </a>";
-				?>
+                echo "<a href = \"showResults.php?formId=$formId&formName=$formName\"> <button class='primaryBtn'>Show Results</button> </a>";
+                ?>
             </div>
             <?php
-			echo "<form name='$formName' method='GET' action='handleFormData.php'>";
-			?>
+            echo "<form name='$formName' method='GET' action='handleFormData.php'>";
+            ?>
             <div id="mainForm">
                 <?php
-				echo "<input name='formId' class = 'hidden' value='$formId'>";
-				echo "<input name='formName' class = 'hidden' value='$formName'>";
-				while ($result = $allFieldsAndLabels->fetch_assoc()) {
-					$label = $result['labels'];
-					$field = $result['fields'];
-					// echo "<br>";
-					echo "<label for='$field'>$label</label>";
-					// echo "<br>";
-					echo "<input name='$field' id='$field'>";
-					// echo "<br>";
-				}
-				echo "<button type='submit' name='submit' >Submit</button>";
-				?>
+                echo "<input name='formId' class = 'hidden' value='$formId'>";
+                echo "<input name='formName' class = 'hidden' value='$formName'>";
+                while ($result = $allFieldsAndLabels->fetch_assoc()) {
+                    $label = $result['labels'];
+                    $field = $result['fields'];
+                    echo "<label for='$field'>$label</label>";
+                    echo "<input name='$field' id='$field'>";
+                }
+                echo "<button type='submit' name='submit' >Submit</button>";
+                ?>
             </div>
             <?php
-			echo "</form>";
-			?>
+            echo "</form>";
+            ?>
         </div>
     </div>
     <style type="text/css">

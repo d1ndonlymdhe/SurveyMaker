@@ -3,9 +3,10 @@ const newFieldForm = selector('form[name="addField"]');
 const demoForm = selector('form[name="demoForm"]');
 const connectToPhp = selector("#sendToPhp");
 let currentQueryString = "";
+const rootAddress = "http://localhost"
 connectToPhp.onclick = function(){
     const formName = selector("#formName").value;
-    location.href = `http://localhost/SurveyMaker/newForm.php?${currentQueryString}&formName=${formName}`;
+    location.href = `${rootAddress}/SurveyMaker/newForm.php?${currentQueryString}&formName=${formName}`;
 }
 createFormBtn.onclick = function(){
     const formDeclare = selector("#formDeclare");

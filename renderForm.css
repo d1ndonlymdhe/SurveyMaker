@@ -1,0 +1,23 @@
+#content {
+    height: 95%;
+    width: 99%;
+    display: grid;
+    background-color: green;
+    margin: 5px;
+    border-radius: 0.5rem;
+}
+
+#content>div {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
+}
+
+#mainForm {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 5px;
+    row-gap: 1rem;
+}

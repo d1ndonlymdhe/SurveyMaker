@@ -18,10 +18,10 @@
 	}
 	$fields = substr($fields, 1,strlen($fields)-2);
 	$values = substr($values, 1,strlen($values)-2);
-	var_dump($fields);
-	var_dump($values);
+	// var_dump($fields);
+	// var_dump($values);
 	$insertDataQuery = "INSERT INTO $formDataTableName($fields) VALUES ($values)";
-	var_dump($insertDataQuery);
+	// var_dump($insertDataQuery);
 	$conn -> query($insertDataQuery);
 header("Location: ./renderForm.php?id=$formId")
 ?>
