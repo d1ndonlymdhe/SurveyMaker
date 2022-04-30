@@ -18,8 +18,8 @@ $formDataTable = $conn->query($getAllDataQuery);
     <link rel="stylesheet" href="global.css">
     <title>
         <?php
-		echo "Results of $formName";
-		?>
+        echo "Results of $formName";
+        ?>
     </title>
     <style>
     #content {
@@ -28,7 +28,7 @@ $formDataTable = $conn->query($getAllDataQuery);
         display: grid;
         align-items: center;
         justify-items: center;
-        background-color: red;
+        background-color: green;
         margin: 1rem;
         border-radius: 0.5rem;
     }
@@ -39,33 +39,33 @@ $formDataTable = $conn->query($getAllDataQuery);
     <div id="root">
         <div id="heading">
             <?php
-			echo "Results of $formName";
-			?>
+            echo "Results of $formName";
+            ?>
         </div>
         <div id="content">
 
             <?php
-			$fields = array();
-			while ($result = $allFieldsAndLabels->fetch_assoc()) {
-				$fieldName = $result['fields'];
-				array_push($fields, $fieldName);
-			}
-			echo "<table border = '2' height= '75%' width='50%'>";
-			echo "<tr>";
-			foreach ($fields as $field) {
-				echo "<th>$field</th>";
-			}
-			echo "</tr>";
-			while ($formData = $formDataTable->fetch_assoc()) {
-				echo "<tr>";
-				foreach ($fields as $field) {
-					$data = $formData[$field];
-					echo "<th>$data</th>";
-				}
-				echo "</tr>";
-			}
-			echo "</table>"
-			?>
+            $fields = array();
+            while ($result = $allFieldsAndLabels->fetch_assoc()) {
+                $fieldName = $result['fields'];
+                array_push($fields, $fieldName);
+            }
+            echo "<table border = '2' height= '75%' width='50%'>";
+            echo "<tr>";
+            foreach ($fields as $field) {
+                echo "<th>$field</th>";
+            }
+            echo "</tr>";
+            while ($formData = $formDataTable->fetch_assoc()) {
+                echo "<tr>";
+                foreach ($fields as $field) {
+                    $data = $formData[$field];
+                    echo "<th>$data</th>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>"
+            ?>
         </div>
     </div>
 
