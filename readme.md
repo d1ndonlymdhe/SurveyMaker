@@ -1,0 +1,1 @@
+# open the file init.php to initialize the Database required for this project 
